@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import jobs from "./jobs.json";
+import "./App.css";
 
 function App() {
+  console.log(jobs);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="App ">
+      <header>
+        <img src="/bg-header-desktop.svg" alt="header" className="NavHeader" />
       </header>
+      <main className="Body">
+        {jobs.map((job, index) => (
+          <div key={index} className="JobComponent">
+            
+            <div>
+              <img src={job.logo} alt="img"/>
+              <p>{job.company}</p>
+              <p>{job.position}</p>
+            </div>
+          </div>
+        ))}
+      </main>
     </div>
   );
 }
