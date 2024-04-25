@@ -12,7 +12,6 @@ function App() {
       <main className="Body">
         {jobs.map((job, index) => (
           <div key={index} className="JobComponent">
-            
             <div>
               <img src={job.logo} alt="img"/>
               <p>{job.company}</p>
